@@ -61,7 +61,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body className="grain scanlines">{children}</body>
+      <body className="grain">{children}</body>
     </html>
   );
 }

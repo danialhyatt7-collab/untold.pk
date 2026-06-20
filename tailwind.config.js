@@ -7,16 +7,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#05050a", // near-black base
-        coal: "#0b0b12",
-        smoke: "#13131d",
-        // Neon accent palette — tweak these to re-skin the whole site
+        ink: "#0a0a0c", // near-black neutral base
+        coal: "#0e0f12",
+        smoke: "#16171b",
+        // Cinematic, desaturated accent palette. One warm ember accent +
+        // muted steel, tuned to the smoky reference. Edit here to re-skin.
+        // (key names kept from the old neon set so the whole site shifts.)
         neon: {
-          purple: "#a855f7", // electric purple
-          violet: "#7c3aed",
-          acid: "#aaff00", // acid green
-          pink: "#ff2d95", // hot pink
-          cyan: "#22d3ee",
+          purple: "#c9a27a", // primary warm ember/sand
+          violet: "#a87f56", // deep bronze
+          acid: "#9fb0ad", // muted sage-steel (was acid green)
+          pink: "#d8a577", // soft warm peach (was hot pink)
+          cyan: "#8aa1ad", // muted steel blue
         },
       },
       fontFamily: {
@@ -26,9 +28,10 @@ module.exports = {
         mono: ["var(--font-mono)", "monospace"],
       },
       boxShadow: {
-        neon: "0 0 20px rgba(168,85,247,0.45), 0 0 60px rgba(168,85,247,0.25)",
-        "neon-pink": "0 0 20px rgba(255,45,149,0.45), 0 0 60px rgba(255,45,149,0.25)",
-        "neon-acid": "0 0 20px rgba(170,255,0,0.4), 0 0 60px rgba(170,255,0,0.2)",
+        // Soft cinematic elevation + faint warm rim (no hard neon glow)
+        neon: "0 18px 50px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,162,122,0.10)",
+        "neon-pink": "0 18px 50px rgba(0,0,0,0.55), 0 0 0 1px rgba(216,165,119,0.14)",
+        "neon-acid": "0 18px 50px rgba(0,0,0,0.55), 0 0 0 1px rgba(159,176,173,0.12)",
       },
       keyframes: {
         flicker: {

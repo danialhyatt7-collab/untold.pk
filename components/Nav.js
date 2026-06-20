@@ -45,13 +45,16 @@ export default function Nav() {
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-neon-pink transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white/70 backdrop-blur-xl">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" />
+            </svg>
+          </span>
           <a
-            href={site.contact.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-neon-pink/50 px-4 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-neon-pink transition-colors hover:bg-neon-pink/10"
+            href="#tickets"
+            className="rounded-full bg-white px-5 py-2 text-xs font-semibold text-ink transition-transform hover:scale-105"
           >
-            Book
+            Get Tickets
           </a>
         </div>
 

@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background-color: #05050a;
+  background-color: transparent;
   color: #e7e7ee;
   font-family: var(--font-body);
   overflow-x: hidden;

@@ -412,6 +412,15 @@ html.has-webgl .manifest::before {
   background: radial-gradient(70% 90% at 28% 50%, rgba(10,13,18,0.86), rgba(10,13,18,0.45) 68%, transparent);
 }
 
+/* Full-bleed opaque panels so the scene never leaks into the side gutters */
+html.has-webgl .events,
+html.has-webgl .contact { position: relative; }
+html.has-webgl .events::before,
+html.has-webgl .contact::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: calc(50% - 50vw);
+  width: 100vw; background: var(--bg); z-index: -1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition-duration: 0.01ms !important; }
 }

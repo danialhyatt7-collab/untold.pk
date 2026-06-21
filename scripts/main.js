@@ -129,6 +129,7 @@
       pre.classList.add('is-done');
       document.body.classList.remove('is-loading');
       document.body.classList.add('is-entered');
+      window.dispatchEvent(new CustomEvent('untold:enter'));   // boot the 3D scene
       unlockAudio();
       startSite();
       setTimeout(() => pre.remove(), 1100);

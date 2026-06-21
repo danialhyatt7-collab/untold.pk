@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>UNTOLD — Expedition 2026</title>
+  <meta name="description" content="UNTOLD — a music expedition into the cold high air. Three gatherings. Islamabad, August 2026. Venue disclosed to ticket holders only." />
+
+  <meta property="og:title" content="UNTOLD — Expedition 2026" />
+  <meta property="og:description" content="Three gatherings, held where the air is thin. Islamabad, August 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/hero.jpg" />
+  <meta name="theme-color" content="#0a0d12" />
+
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body class="is-loading">
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- ===================== GRAIN / VIGNETTE OVERLAY ===================== -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <!-- LOGO: swap text below for your SVG -> assets/logo/untold-light.svg -->
+      <div class="wordmark wordmark--sm" data-cursor="hover">
+        <span>UNTOLD</span><sup>EXP</sup>
+      </div>
+
+      <div class="preloader__count" id="loadCount" aria-hidden="true">000</div>
+
+      <div class="preloader__bar"><span id="loadBar"></span></div>
+
+      <p class="preloader__status" id="loadStatus">// the signal is forming</p>
+
+      <button class="enter-btn" id="enterBtn" data-magnetic data-cursor="hover" disabled>
+        <span class="enter-btn__label">CLICK TO ENTER</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <a class="nav__brand wordmark" href="#top" data-cursor="hover" aria-label="UNTOLD home">
+      <span>UNTOLD</span><sup>EXP</sup>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#manifest" data-cursor="hover"><i>01</i> Manifest</a>
+      <a href="#structure" data-cursor="hover"><i>02</i> Structure</a>
+      <a href="#events" data-cursor="hover"><i>03</i> Events</a>
+      <a href="#contact" data-cursor="hover"><i>04</i> Contact</a>
+    </nav>
+
+    <button class="sound-toggle" id="soundToggle" data-cursor="hover" aria-pressed="false" aria-label="Toggle sound">
+      <span class="sound-toggle__label">SOUND</span>
+      <span class="sound-toggle__bars" aria-hidden="true">
+        <i></i><i></i><i></i><i></i>
+      </span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero__media">
+        <video class="hero__video" id="heroVideo" playsinline muted loop preload="auto" poster="assets/img/hero.jpg">
+          <source src="assets/video/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__media-fallback" style="background-image:url('assets/img/hero.jpg')"></div>
+        <div class="hero__scrim"></div>
+      </div>
+
+      <!-- HUD corner telemetry -->
+      <div class="hud hud--tl">
+        <span class="hud__line">// Expedition © 2026</span>
+        <span class="hud__line dim">Untold. All rights reserved.</span>
+      </div>
+      <div class="hud hud--tr">
+        <span class="hud__line" data-scramble>Islamabad — 33.6844° N</span>
+        <span class="hud__line dim">PK / signal acquired</span>
+      </div>
+      <div class="hud hud--bl">
+        <span class="hud__tag">S2</span><span class="hud__val" data-ticker="drift">DRIFT 0.44</span>
+      </div>
+      <div class="hud hud--br">
+        <span class="hud__tag">S7</span><span class="hud__val" data-ticker="res">RES 7.09</span>
+      </div>
+
+      <div class="hero__center">
+        <h1 class="hero__title wordmark wordmark--xl">
+          <span>UNTOLD</span>
+        </h1>
+        <div class="hero__rule"></div>
+        <p class="hero__tagline">// the structure is awake.</p>
+      </div>
+
+      <div class="scroll-cue" data-cursor="hover">
+        <span>SCROLL TO DESCEND</span>
+        <div class="scroll-cue__line"><i></i></div>
+      </div>
+    </section>
+
+    <!-- ===================== MANIFEST ===================== -->
+    <section class="manifest" id="manifest">
+      <span class="section-index">/// 01 — Manifest</span>
+      <p class="manifest__lead reveal-lines">
+        We build temporary worlds in the cold high air — sound systems raised
+        where the maps run out, tuned to the silence between mountains. UNTOLD
+        is an expedition disguised as a festival: three gatherings, each a
+        signal sent into the dark, each kept secret until the moment of arrival.
+      </p>
+      <div class="manifest__meta">
+        <div><span class="k">Origin</span><span class="v">Islamabad, Pakistan</span></div>
+        <div><span class="k">Season</span><span class="v">August 2026</span></div>
+        <div><span class="k">Access</span><span class="v">Venue disclosed to ticket holders</span></div>
+      </div>
+    </section>
+
+    <!-- ===================== WITHIN THE STRUCTURE ===================== -->
+    <section class="structure" id="structure">
+      <div class="structure__media">
+        <video class="structure__video" id="descentVideo" playsinline muted loop preload="auto" poster="assets/img/dimensions.jpg">
+          <source src="assets/video/descent.mp4" type="video/mp4" />
+        </video>
+        <div class="structure__media-fallback" style="background-image:url('assets/img/dimensions.jpg')"></div>
+        <div class="structure__scrim"></div>
+      </div>
+      <div class="structure__content">
+        <span class="section-index light">/// Chamber — descent</span>
+        <h2 class="structure__title" data-scramble-heading>WITHIN THE STRUCTURE</h2>
+        <p class="structure__sub">Three gatherings, kept cold enough to stay honest.</p>
+      </div>
+    </section>
+
+    <!-- ===================== EVENTS ===================== -->
+    <section class="events" id="events">
+      <div class="events__head">
+        <span class="section-index">/// 03 — The Gatherings</span>
+        <h2 class="events__heading">Three signals.<br />One August.</h2>
+      </div>
+
+      <article class="event" data-event="airbeat">
+        <div class="event__media">
+          <img src="assets/img/airbeat.jpg" alt="Airbeat — a beam of light over a frozen valley at night" loading="lazy" />
+          <video class="event__video" data-src="assets/video/airbeat.mp4" playsinline muted loop preload="none"></video>
+        </div>
+        <div class="event__body">
+          <span class="event__no">01</span>
+          <h3 class="event__name">Airbeat</h3>
+          <p class="event__desc">The opening transmission. A column of light thrown to the sky, the first crowd gathered on the snow.</p>
+          <ul class="event__facts">
+            <li><span class="k">Date</span><span class="v">Fri 07 August 2026</span></li>
+            <li><span class="k">Gates</span><span class="v">18:00 PKT</span></li>
+            <li><span class="k">Place</span><span class="v">Islamabad — venue disclosed to ticket holders</span></li>
+          </ul>
+          <a class="ticket-link" href="#contact" data-magnetic data-cursor="hover"><span>Request access</span><i>→</i></a>
+        </div>
+      </article>
+
+      <article class="event" data-event="dimensions">
+        <div class="event__media">
+          <img src="assets/img/dimensions.jpg" alt="Dimensions — a crystalline geometric ice cavern with a glowing portal" loading="lazy" />
+          <video class="event__video" data-src="assets/video/dimensions.mp4" playsinline muted loop preload="none"></video>
+        </div>
+        <div class="event__body">
+          <span class="event__no">02</span>
+          <h3 class="event__name">Dimensions</h3>
+          <p class="event__desc">Inward. A night folded into geometry — deep, faceted, built to bend the room around the sound.</p>
+          <ul class="event__facts">
+            <li><span class="k">Date</span><span class="v">Sat 15 August 2026</span></li>
+            <li><span class="k">Gates</span><span class="v">16:00 PKT</span></li>
+            <li><span class="k">Place</span><span class="v">Islamabad — venue disclosed to ticket holders</span></li>
+          </ul>
+          <a class="ticket-link" href="#contact" data-magnetic data-cursor="hover"><span>Request access</span><i>→</i></a>
+        </div>
+      </article>
+
+      <article class="event" data-event="awakening">
+        <div class="event__media">
+          <img src="assets/img/awakening.jpg" alt="Awakening — amber dawn light breaking over a monolith" loading="lazy" />
+          <video class="event__video" data-src="assets/video/awakening.mp4" playsinline muted loop preload="none"></video>
+        </div>
+        <div class="event__body">
+          <span class="event__no">03</span>
+          <h3 class="event__name">Awakening</h3>
+          <p class="event__desc">The closing dawn. Warm light cracks the seam, the aurora fades, and the structure goes quiet again.</p>
+          <ul class="event__facts">
+            <li><span class="k">Date</span><span class="v">Sat 22 August 2026</span></li>
+            <li><span class="k">Gates</span><span class="v">04:00 PKT — sunrise set</span></li>
+            <li><span class="k">Place</span><span class="v">Islamabad — venue disclosed to ticket holders</span></li>
+          </ul>
+          <a class="ticket-link" href="#contact" data-magnetic data-cursor="hover"><span>Request access</span><i>→</i></a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== CONTACT / FOOTER ===================== -->
+    <section class="contact" id="contact">
+      <span class="section-index">/// 04 — Contact</span>
+      <h2 class="contact__title">Find the signal.</h2>
+      <p class="contact__sub">Venue and coordinates are disclosed to ticket holders only. To request access or partner with the expedition:</p>
+
+      <a class="contact__phone" href="tel:+923374841818" data-magnetic data-cursor="hover">+92 33 7484 1818</a>
+
+      <div class="contact__row">
+        <a href="https://instagram.com" target="_blank" rel="noopener" data-cursor="hover">Instagram ↗</a>
+        <a href="mailto:hello@untold.pk" data-cursor="hover">hello@untold.pk ↗</a>
+        <a href="https://wa.me/923374841818" target="_blank" rel="noopener" data-cursor="hover">WhatsApp ↗</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__brand wordmark"><span>UNTOLD</span><sup>EXP</sup></div>
+      <div class="footer__cols">
+        <span>// Expedition © 2026</span>
+        <span>Islamabad — Pakistan</span>
+        <span>All rights reserved.</span>
+      </div>
+      <div class="footer__legal">Built for the deep future.</div>
+    </footer>
+
+  </main>
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

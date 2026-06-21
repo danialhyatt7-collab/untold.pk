@@ -386,6 +386,32 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .reveal-lines .line { overflow: hidden; }
 [data-fade] { opacity: 0; transform: translateY(28px); }
 
+/* ============================================================
+   REAL-TIME 3D MODE  (added when scripts/scene.js boots)
+   The fixed WebGL canvas sits behind <main>; "journey" sections
+   go transparent to reveal it, panels stay opaque to cover it.
+   ============================================================ */
+#webgl {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  z-index: 0; display: none; pointer-events: none;
+}
+html.has-webgl #webgl { display: block; }
+html.has-webgl main { position: relative; z-index: 1; }
+
+/* Journey sections reveal the scene */
+html.has-webgl .hero { background: transparent; }
+html.has-webgl .hero__video,
+html.has-webgl .hero__media-fallback { opacity: 0 !important; }   /* video kept alive for ambient audio */
+html.has-webgl .structure__video,
+html.has-webgl .structure__media-fallback { opacity: 0 !important; }
+
+/* Manifest floats over the scene with a legibility scrim */
+html.has-webgl .manifest { background: transparent; position: relative; }
+html.has-webgl .manifest::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(70% 90% at 28% 50%, rgba(10,13,18,0.86), rgba(10,13,18,0.45) 68%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition-duration: 0.01ms !important; }
 }

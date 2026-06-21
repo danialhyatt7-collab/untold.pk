@@ -150,10 +150,11 @@
   }
 
   function initHeroVideo() {
+    const webgl = document.documentElement.classList.contains('has-webgl');
     const v = $('#heroVideo');
-    if (v) readyVideo(v);
+    if (v) readyVideo(v);              // always: visual in video-mode, ambient audio bed in 3D-mode
     const d = $('#descentVideo');
-    if (d) readyVideo(d);
+    if (d) { if (webgl) d.pause(); else readyVideo(d); }
   }
 
   /* Event hover -> swap to video if a real source is present */
@@ -191,7 +192,16 @@
   function allVideos() { return $$('video'); }
 
   function applyMute() {
-    allVideos().forEach((v) => { v.muted = !soundOn; if (soundOn) v.play().catch(() => {}); });
+    // Hero clip is the single ambient bed; every other video stays muted.
+    const hero = $('#heroVideo');
+    allVideos().forEach((v) => {
+      if (v === hero) {
+        v.muted = !soundOn;
+        v.play().catch(() => {});      // keep playing so unmute is instant
+      } else {
+        v.muted = true;
+      }
+    });
     const btn = $('#soundToggle');
     if (btn) btn.setAttribute('aria-pressed', String(soundOn));
   }

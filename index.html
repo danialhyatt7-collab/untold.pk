@@ -19,8 +19,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles/main.css" />
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 <body class="is-loading">
+
+  <!-- ===================== REAL-TIME 3D CANVAS ===================== -->
+  <canvas id="webgl" aria-hidden="true"></canvas>
 
   <!-- ===================== CUSTOM CURSOR ===================== -->
   <div class="cursor" aria-hidden="true">
@@ -241,5 +253,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="scripts/main.js"></script>
+  <script type="module" src="scripts/scene.js"></script>
 </body>
 </html>
